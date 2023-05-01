@@ -40,3 +40,15 @@
 ## 因為上面reset指令沒有下 `--hard` 所以過程會保留，使用下方指令可清除所有過程
 `git checkout .`
 ## 完成
+
+# 暫時存檔
+## 不想commit，但是又想切換分支或者先做別的功能時，可以使用stash
+`git stash save '暫存訊息'`
+## 查看stash紀錄
+`git stash list`
+## 取出stash紀錄
+`git stash pop`
+## 取出stash紀錄，但是不要刪除stash紀錄，`index`帶入stash list的index
+`git stash apply *index*`
+## 刪除stash紀錄
+`git stash drop`
