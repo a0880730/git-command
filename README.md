@@ -8,15 +8,15 @@
 # 基本指令
 - 初始化 Git  
 `git init`
-- 儲存目前所有變更
+- 儲存目前所有變更  
 `git add .`
-- 提交一個紀錄
+- 提交一個紀錄  
 `git commit -m '首次提交'`
-- 拉取一個遠端repo，**terminal記得停留在要存放的資料夾**
+- 拉取一個遠端repo，**terminal記得停留在要存放的資料夾**  
 `git clone 遠端repo網址`
-- 推送到遠端repo
+- 推送到遠端repo  
 `git push`
-- 拉取遠端repo
+- 拉取遠端repo  
 `git pull`
 
 # 分支
