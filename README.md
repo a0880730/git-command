@@ -30,10 +30,17 @@
 `git checkout -b 分支名稱`
 - 移除分支  
 `git branch -D 分支名稱`
-- 在本地建立分支，並且推送到遠端
+- 在本地建立分支，並且推送到遠端  
 `git push -u origin 分支名稱`
-- 刪除遠端分支
+- 查看遠端分支  
+`git branch -r`
+- 切換至遠端分支，本地同步該分支下來  
+`git checkout 分支名稱`
+- 刪除遠端分支  
 `git push origin --delete 分支名稱`
+- 同步遠端主線的紀錄到遠端分支，使用此方法所有推送紀錄會同步  
+`git pull origin main`
+
 
 # 採櫻桃
 當git其中一個紀錄是垃圾紀錄，可以使用採櫻桃的方式略過垃圾紀錄
@@ -73,7 +80,16 @@
 - 查看log，找到要撤銷的時間點的**hash**  
 `git log`
 - 撤銷該紀錄，**hash**從log取得  
-`git revert hash`
+`git revert hash`  
 輸入後會進入vim，輸入`:x!`Enter後離開  
 - 重新提交  
 `git push`
+
+# 合併衝突的處理
+1. 先使用 `git pull` 拉取遠端分支 
+如果有看到 `hint: git config pull.rebase false; #merge` 的訊息，可以使用下方指令設定  
+`hint: git config pull.rebase false`  
+2. 成功執行 `git pull` 時，如果有衝突，會看到衝突的檔案視窗，修改成想要儲存的版本之後，儲存離開
+3. 執行 `git add .`，將修改的檔案加入暫存
+4. 執行 `git commit -m '衝突處理'`，提交衝突處理
+5. 執行 `git push`，推送到遠端
