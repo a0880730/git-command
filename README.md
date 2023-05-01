@@ -55,6 +55,7 @@
 `git checkout .`
 4. 完成
 
+
 # 暫時存檔
 不想commit，但是又想切換分支或者先做別的功能時，可以使用stash
 - 紀錄暫存  
@@ -67,13 +68,3 @@
 `git stash apply index`
 - 刪除stash紀錄  
 `git stash drop`
-
-# 將版本回朔到某個時間點，並且保留提交紀錄
-- 查看log，找到要回朔的時間點的**hash**
-`git log`
-- 回朔到該時間點，**hash**從log取得
-`git revert hash`
-- 重新提交
-`git push`
-
-
