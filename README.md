@@ -1,16 +1,23 @@
-# 歡迎使用 Markdown線上編輯器 MdEditor
-
-
 # 常用git指令
+
 - 查看git推送紀錄  
 `git log`
 - 查看目前 Git 變更狀態  
 `git status`
 
 # 基本指令
-- `git init`
-- `git add .`
-- `git commit -m '首次提交'`
+- 初始化 Git  
+`git init`
+- 儲存目前所有變更
+`git add .`
+- 提交一個紀錄
+`git commit -m '首次提交'`
+- 拉取一個遠端repo，**terminal記得停留在要存放的資料夾**
+`git clone 遠端repo網址`
+- 推送到遠端repo
+`git push`
+- 拉取遠端repo
+`git pull`
 
 # 分支
 - 查看所有分支  
@@ -23,7 +30,10 @@
 `git checkout -b 分支名稱`
 - 移除分支  
 `git branch -D 分支名稱`
-
+- 在本地建立分支，並且推送到遠端
+`git push -u origin 分支名稱`
+- 刪除遠端分支
+`git push origin --delete 分支名稱`
 
 # 採櫻桃
 當git其中一個紀錄是垃圾紀錄，可以使用採櫻桃的方式略過垃圾紀錄
