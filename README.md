@@ -68,3 +68,11 @@
 `git stash apply index`
 - 刪除stash紀錄  
 `git stash drop`
+
+# 將該紀錄撤銷，並且保留提交紀錄
+- 查看log，找到要撤銷的時間點的**hash**
+`git log`
+- 撤銷該紀錄，**hash**從log取得
+`git revert hash`
+- 重新提交
+`git push`
