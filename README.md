@@ -1,6 +1,6 @@
 # 常用git指令
 
-- 查看git推送紀錄  
+- 查看git提交紀錄  
 `git log`
 - 查看目前 Git 變更狀態  
 `git status`
@@ -11,7 +11,7 @@
 - 儲存目前所有變更  
 `git add .`
 - 提交一個紀錄  
-`git commit -m '首次提交'`
+`git commit -m '提交描述'`
 - 拉取一個遠端repo，**terminal記得停留在要存放的資料夾**  
 `git clone 遠端repo網址`
 - 推送到遠端repo  
@@ -31,11 +31,11 @@
 `git checkout -b 分支名稱`
 - 移除分支  
 `git branch -D 分支名稱`
-- 在本地建立分支，並且推送到遠端  
+- 將本地分支推送到遠端  
 `git push -u origin 分支名稱`
 - 查看遠端分支  
 `git branch -r`
-- 切換至遠端分支，本地會同步出現該分支    
+- 切換至遠端分支，此操作本地會同步出現該分支    
 `git checkout 分支名稱`
 - 刪除遠端分支  
 `git push origin --delete 分支名稱`
@@ -44,26 +44,25 @@
 
 
 # 採櫻桃
-當git其中一個紀錄是有錯誤或多餘的紀錄，可以使用採櫻桃的方式略過此筆紀錄  
+當提交紀錄其中有錯誤或多餘的紀錄，可以使用採櫻桃的方式略過這些紀錄  
 1. 先查看log看要回朔到哪個版本  
 `git log`
-2. 回朔到該版本 **hash** 需從log取得  
+2. 回朔到該版本， **hash** 需從log取得  
 `git reset --hard hash`
-3. 跳過垃圾紀錄，逐一把後續的**hash**採集，一定要照順序!  
+3. 跳過多餘紀錄，逐一把後續的**hash**採集，一定要照順序!  
 `git cherry-pick hash`
 4. 採集完成查看log是否已經移除垃圾紀錄  
 `git log`
 
 
 # 回朔操作
-可以將檔案版本回朔到某次操作紀錄後的狀態
+可以將檔案版本回朔至某次操作"之後"
 1. 查看git操作紀錄，每個操作紀錄都有自己的**hash**  
 `git reflog`
 2. 回朔到某個操作紀錄，**hash**從reflog取得  
-`git reset hash`
-or
-`git reset --hard hash`
-3. 如果上面 reset 指令沒有下 `--hard` 所以過程會保留，使用下方指令可清除所有過程，或是手動編輯  
+`git reset hash` 會保留過程  
+`git reset --hard hash` 不會保留過程
+3. 如果上面 reset 指令沒有下 `--hard` ，可使用此指令清除所有過程，或手動編輯  
 `git checkout .`
 4. 重新提交
 `git push`  
