@@ -67,10 +67,10 @@ or
 `git reset --hard hash` 不會保留過程
 3. 如果上面 reset 指令沒有下 `--hard` ，可使用此指令清除所有過程，或手動編輯  
 `git checkout .`
-4. 重新提交  
-`git push`  
-如果已經有更新的版本push上去，會出現錯誤，此時可以使用`-f`指令強制push  
-`git push -f`
+4. 如果遠端已經有更新的版本，會出現錯誤，此時可以使用`-f`指令強制push，覆蓋之前的紀錄，或者再切出一個新的分支，新的分支就會是正確的提交紀錄
+`git push -f`  
+or
+`git checkout -b 新分支名稱`
 
 
 # 暫時存檔
